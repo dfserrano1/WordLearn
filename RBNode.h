@@ -9,21 +9,16 @@ class RBNode {
         string pos; // Part of Speech.
         string def; // Definition.
     public:
+        bool isRoot;
         bool isBlack;
-
         RBNode* left;
         RBNode* right;
-        RBNode* grandpa;
-        RBNode* parent;
-        RBNode* uncle;
 
         string getWord() const { return word; }
         int getLen() const { return len; }
         string getPOS() const { return pos; }
         string getDef() const { return def; }
 
-        void setExtendedFam();
-
         RBNode();
-        RBNode(RBNode* parent, string word, int length, string pos, string def);
+        RBNode(bool isRoot, string word, int len, string pos, string def);
 };
