@@ -64,6 +64,8 @@ Your Guess: qwertyu
 ERROR: Not in word list!
 
 Your Guess: _candy_
+Part of Speech: v. t.
+Definition: To conserve or boil in sugar; as  to candy fruits; to candy ginger.
 
 1. p o t h o l e
    # # * # # # *
