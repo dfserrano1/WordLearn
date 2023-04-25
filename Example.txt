@@ -1,0 +1,92 @@
+Welcome to WordLearn!
+
+^ = Letter is in the word and in the correct spot
+* = Letter is in the word but in the wrong spot
+# = Letter is not in the word in any spot
+
+Target Length: 7
+Target Part of Speech: a.
+Target Definition: Heated to whiteness; glowing with heat.
+
+1. _ _ _ _ _ _ _
+2. _ _ _ _ _ _ _
+3. _ _ _ _ _ _ _
+4. _ _ _ _ _ _ _
+5. _ _ _ _ _ _ _
+6. _ _ _ _ _ _ _
+7. _ _ _ _ _ _ _
+8. _ _ _ _ _ _ _
+
+Your Guess: pothole
+Part of Speech: n.
+Definition: A circular hole formed in the rocky beds of rivers by the grinding action of stones or gravel whirled round by the water in what was at first a natural depression of the rock.
+
+1. p o t h o l e
+   ^ ^ * * ^ # #
+2. _ _ _ _ _ _ _
+3. _ _ _ _ _ _ _
+4. _ _ _ _ _ _ _
+5. _ _ _ _ _ _ _
+6. _ _ _ _ _ _ _
+7. _ _ _ _ _ _ _
+8. _ _ _ _ _ _ _
+
+Your Guess: january
+ERROR: Word is too long!
+
+Your Guess: candy
+ERROR: Word is too short!
+
+Your Guess: candy__
+Part of Speech: v. t.
+Definition: To conserve or boil in sugar; as  to candy fruits; to candy ginger.
+
+1. p o t h o l e
+   # # * # # # *
+2. c a n d y _ _
+   ^ ^ ^ ^ # # #
+3. _ _ _ _ _ _ _
+4. _ _ _ _ _ _ _
+5. _ _ _ _ _ _ _
+6. _ _ _ _ _ _ _
+7. _ _ _ _ _ _ _
+8. _ _ _ _ _ _ _
+
+Your Guess: qwerty
+ERROR: Word is too short!
+
+Your Guess: qwertyu
+ERROR: Not in word list!
+
+Your Guess: _candy_
+
+1. p o t h o l e
+   # # * # # # *
+2. c a n d y _ _
+   ^ ^ ^ ^ # # #
+3. _ c a n d y _
+   # * * * * # #
+4. _ _ _ _ _ _ _
+5. _ _ _ _ _ _ _
+6. _ _ _ _ _ _ _
+7. _ _ _ _ _ _ _
+8. _ _ _ _ _ _ _
+
+Your Guess: candent
+Part of Speech: a.
+Definition: Heated to whiteness; glowing with heat.
+
+1. p o t h o l e
+   # # * # # # *
+2. c a n d y _ _
+   ^ ^ ^ ^ # # #
+3. _ c a n d y _
+   # * * * * # #
+4. c a n d e n t
+   ^ ^ ^ ^ ^ ^ ^
+5. _ _ _ _ _ _ _
+6. _ _ _ _ _ _ _
+7. _ _ _ _ _ _ _
+8. _ _ _ _ _ _ _
+
+YOU WIN!
