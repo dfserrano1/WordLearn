@@ -1,5 +1,10 @@
 Welcome to WordLearn!
 
+Data Structure Menu:
+1. Red-Black Tree
+2. B-Tree
+Select a Tree: 1
+
 ^ = Letter is in the word and in the correct spot
 * = Letter is in the word but in the wrong spot
 # = Letter is not in the word in any spot
