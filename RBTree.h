@@ -7,7 +7,7 @@ using std::string;
 using std::pair;
 
 // Red-Black Tree Properties:
-// 1. A node is either RED or BLACK.
+// 1. Node are either RED or BLACK.
 // 2. Root is always BLACK.
 // 3. RED node always has BLACK children.
 // 4. Number of BLACK nodes in any path from root to leaf is the same.
@@ -27,12 +27,14 @@ class RBTree {
         RBNode* rotateLeftRight(RBNode* node);
         RBNode* rotateRightLeft(RBNode* node);
 
+        void get7LetterNodes(RBNode* node, vector<RBNode*>& vec) const;
         RBNode* searchHelper(RBNode* node, string word) const;
-        void traverseHelper(RBNode* node, vector<pair<string, bool>>& vec) const;
+        void getColorsHelper(RBNode* node, vector<pair<string, bool>>& vec) const;
     public:
         RBTree() : root(nullptr) {}
         ~RBTree();
         void insert(string word, int len, string pos, string def);
+        vector<string> getTarget() const;
         vector<string> search(string word) const;
-        vector<pair<string, bool>> traverse() const;
+        vector<pair<string, bool>> getColors() const;
 };

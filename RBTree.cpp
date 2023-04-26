@@ -1,6 +1,8 @@
 #include "RBTree.h"
 #include <vector>
 #include <string>
+#include <random>
+#include <ctime>
 using std::vector;
 using std::string;
 using std::pair;
@@ -29,10 +31,10 @@ void RBTree::insert(string word, int len, string pos, string def) {
 // each ancestor. Ultimately returns ptr to root (which may have been updated).
 RBNode* RBTree::insertHelper(RBNode* node, RBNode* parent, string word, int len, string pos, string def) {
     if (node == nullptr) {
-        if (parent == nullptr) {
+        if (parent == nullptr) { // If parent is nullptr, mark new node as the root.
             node = new RBNode(true, word, len, pos, def);
         }
-        else {
+        else { // Else, it's not the root.
             node = new RBNode(false, word, len, pos, def);
         }
     }
@@ -187,12 +189,42 @@ RBNode* RBTree::rotateRightLeft(RBNode* node) {
     return newParent;
 }
 
+// Gets a random 7-letter word from the tree. Returns vec containing the word, its lenth (as a
+// string), its POS, and its def.
+vector<string> RBTree::getTarget() const {
+    vector<RBNode*> sevenLetterNodes;
+    get7LetterNodes(this->root, sevenLetterNodes);
+
+    if (sevenLetterNodes.empty()) { // No 7-letter words were found.
+        return {};
+    }
+
+    // Generate random int from 0 to num of 7-letter nodes - 1.
+    std::mt19937 rng(std::time(0)); // Seed rng with current time.
+    std::uniform_int_distribution<int> dist(0, sevenLetterNodes.size() - 1);
+    unsigned int randomIndex = dist(rng);
+
+    RBNode* target = sevenLetterNodes.at(randomIndex);
+    return {target->getWord(), to_string(target->getLen()), target->getPOS(), target->getDef()};
+}
+
+// Performs inorder traversal. Returns a vec of all nodes with 7-letter words.
+void RBTree::get7LetterNodes(RBNode* node, vector<RBNode*>& vec) const {
+    if (node != nullptr) {
+        get7LetterNodes(node->left, vec);
+        if (node->getLen() == 7) {
+            vec.push_back(node);
+        }
+        get7LetterNodes(node->right, vec);
+    }
+}
+
 // Searches tree for the passed-in word. If found, returns vec of word, length (as a string),
 // POS, and def. Else, returns empty vec.
 vector<string> RBTree::search(string word) const {
     RBNode* found = searchHelper(this->root, word);
     if (found != nullptr) {
-        return { found->getWord(), to_string(found->getLen()), found->getPOS(), found->getDef() };
+        return {found->getWord(), to_string(found->getLen()), found->getPOS(), found->getDef()};
     }
     else {
         return {};
@@ -216,18 +248,18 @@ RBNode* RBTree::searchHelper(RBNode* node, string word) const {
     }
 }
 
-// Testing: Performs inorder traversal. Returns a vec of <words, and their node colors>.
-vector<pair<string, bool>> RBTree::traverse() const {
+// Testing: Performs preorder traversal. Returns a vec of <words, and their node colors>.
+vector<pair<string, bool>> RBTree::getColors() const {
     vector<pair<string, bool>> vec;
-    traverseHelper(this->root, vec);
+    getColorsHelper(this->root, vec);
     return vec;
 }
 
-// Testing: Performs inorder traversal, pushing each word and node color into the vec.
-void RBTree::traverseHelper(RBNode* node, vector<pair<string, bool>>& vec) const {
+// Testing: Performs preorder traversal, pushing each word and node color into the vec.
+void RBTree::getColorsHelper(RBNode* node, vector<pair<string, bool>>& vec) const {
     if (node != nullptr) {
-        traverseHelper(node->left, vec);
         vec.push_back(std::make_pair(node->getWord(), node->isBlack));
-        traverseHelper(node->right, vec);
+        getColorsHelper(node->left, vec);
+        getColorsHelper(node->right, vec);
     }
 }
