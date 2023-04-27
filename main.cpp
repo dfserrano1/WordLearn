@@ -168,12 +168,12 @@ int main() {
                 break;
             }
 
-            // Search input word in RB tree.
+            // Search input word in selected structure.
             string inputWord = removeUnderscores(input);
             vector<string> searchWord;
             double loadingTime = 0;
 
-            if(menu == 1) {
+            if(menu == 1) { // Search input word in RB tree.
                 auto start = chrono::steady_clock::now();
                 searchWord = treeRB.search(inputWord);
                 auto end = chrono::steady_clock::now();
@@ -181,7 +181,7 @@ int main() {
                 loadingTime = loadingTimeNS/(1e9);
                 cout << "Time taken to search input in RB tree = " << loadingTime << " seconds." << endl;
             }
-            if(menu == 2) {
+            if(menu == 2) { // Search input word in B tree.
                 // searchWord = treeB.search(inputWord);
             }
             if(searchWord.empty()){
