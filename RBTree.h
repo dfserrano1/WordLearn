@@ -16,6 +16,7 @@ using std::pair;
 class RBTree {
     private:
         RBNode* root;
+        vector<RBNode*> sevenLetterNodes;
 
         void clearTree(RBNode* node);
 
@@ -27,7 +28,7 @@ class RBTree {
         RBNode* rotateLeftRight(RBNode* node);
         RBNode* rotateRightLeft(RBNode* node);
 
-        void get7LetterNodes(RBNode* node, vector<RBNode*>& vec) const;
+        //void get7LetterNodes(RBNode* node, vector<RBNode*>& vec) const;
         RBNode* searchHelper(RBNode* node, string word) const;
         void getColorsHelper(RBNode* node, vector<pair<string, bool>>& vec) const;
     public:

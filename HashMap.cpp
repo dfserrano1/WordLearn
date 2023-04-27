@@ -118,15 +118,15 @@ void HashMap::rehash() {
 // Gets a random 7-letter word from the table. Returns vec containing the word, its lenth (as a
 // string), its POS, and its def.
 vector<string> HashMap::getTarget() const {
-    if (sevenLetterNodes.empty()) {
+    if (this->sevenLetterNodes.empty()) {
         return {};
     }
 
     std::mt19937 rng(std::time(0)); // Seed rng with current time.
-    std::uniform_int_distribution<int> dist(0, sevenLetterNodes.size() - 1);
+    std::uniform_int_distribution<int> dist(0, this->sevenLetterNodes.size() - 1);
     unsigned int randomIndex = dist(rng);
 
-    HashNode* target = sevenLetterNodes.at(randomIndex);
+    HashNode* target = this->sevenLetterNodes.at(randomIndex);
     return {target->getWord(), to_string(target->getLen()), target->getPOS(), target->getDef()};
 }
 

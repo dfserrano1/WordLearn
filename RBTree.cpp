@@ -37,6 +37,10 @@ RBNode* RBTree::insertHelper(RBNode* node, RBNode* parent, string word, int len,
         else { // Else, it's not the root.
             node = new RBNode(false, word, len, pos, def);
         }
+
+        if (len == 7) { // If newly inserted node was 7 letters, push to vec.
+            this->sevenLetterNodes.push_back(node);
+        }
     }
     if (word < node->getWord()) {
         node->left = insertHelper(node->left, node, word, len, pos, def);
@@ -192,31 +196,17 @@ RBNode* RBTree::rotateRightLeft(RBNode* node) {
 // Gets a random 7-letter word from the tree. Returns vec containing the word, its lenth (as a
 // string), its POS, and its def.
 vector<string> RBTree::getTarget() const {
-    vector<RBNode*> sevenLetterNodes;
-    get7LetterNodes(this->root, sevenLetterNodes);
-
-    if (sevenLetterNodes.empty()) { // No 7-letter words were found.
+    if (this->sevenLetterNodes.empty()) {
         return {};
     }
 
     // Generate random int from 0 to num of 7-letter nodes - 1.
     std::mt19937 rng(std::time(0)); // Seed rng with current time.
-    std::uniform_int_distribution<int> dist(0, sevenLetterNodes.size() - 1);
+    std::uniform_int_distribution<int> dist(0, this->sevenLetterNodes.size() - 1);
     unsigned int randomIndex = dist(rng);
 
-    RBNode* target = sevenLetterNodes.at(randomIndex);
+    RBNode* target = this->sevenLetterNodes.at(randomIndex);
     return {target->getWord(), to_string(target->getLen()), target->getPOS(), target->getDef()};
-}
-
-// Performs inorder traversal. Returns a vec of all nodes with 7-letter words.
-void RBTree::get7LetterNodes(RBNode* node, vector<RBNode*>& vec) const {
-    if (node != nullptr) {
-        get7LetterNodes(node->left, vec);
-        if (node->getLen() == 7) {
-            vec.push_back(node);
-        }
-        get7LetterNodes(node->right, vec);
-    }
 }
 
 // Searches tree for the passed-in word. If found, returns vec of word, length (as a string),
@@ -255,7 +245,7 @@ vector<pair<string, bool>> RBTree::getColors() const {
     return vec;
 }
 
-// Testing: Performs preorder traversal, pushing each word and node color into the vec.
+// Testing: Performs preorder traversal (NLR), pushing each word and node color into the vec.
 void RBTree::getColorsHelper(RBNode* node, vector<pair<string, bool>>& vec) const {
     if (node != nullptr) {
         vec.push_back(std::make_pair(node->getWord(), node->isBlack));
