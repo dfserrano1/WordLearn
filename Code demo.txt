@@ -1,0 +1,239 @@
+
+Welcome to WordLearn!
+Time taken to load Red-Black Tree: 1.55516 seconds
+Game Menu: 
+1: Red-Black Tree Game
+2: B-Tree Game
+3. Rules
+4: Quit
+Enter 1-4 to make a menu selection
+1
+Target Length: 7
+Target Part of Speech: """a."""
+Target Definition: """Being at rest; quiet."""
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+Barring
+Time taken to retrieve word in RB tree = 7.186e-06 seconds.
+
+Your guess: Barring
+Part of Speech: """p. pr. & vb. n."""
+Definition: """of Bar"""
+
+1. B a r r i n g
+   # # # # # # #
+
+2. _ _ _ _ _ _ _
+
+3. _ _ _ _ _ _ _
+
+4. _ _ _ _ _ _ _
+
+5. _ _ _ _ _ _ _
+
+6. _ _ _ _ _ _ _
+
+7. _ _ _ _ _ _ _
+
+8. _ _ _ _ _ _ _
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+Flame__
+Time taken to retrieve word in RB tree = 1.3143e-05 seconds.
+
+Your guess: Flame
+Part of Speech: """n."""
+Definition: """A stream of burning vapor or gas  emitting light and heat; darting or streaming fire; a blaze; a fire."""
+
+1. B a r r i n g
+   # # # # # # #
+
+2. F l a m e _ _
+   # * # # * # #
+
+3. _ _ _ _ _ _ _
+
+4. _ _ _ _ _ _ _
+
+5. _ _ _ _ _ _ _
+
+6. _ _ _ _ _ _ _
+
+7. _ _ _ _ _ _ _
+
+8. _ _ _ _ _ _ _
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+Lawyer_
+Time taken to retrieve word in RB tree = 1.0651e-05 seconds.
+
+Your guess: Lawyer
+Part of Speech: """n."""
+Definition: """One versed in the laws  or a practitioner of law; one whose profession is to conduct lawsuits for clients or to advise as to prosecution or defence of lawsuits or as to legal rights and obligations in other matters. It is a general term comprehending attorneys counselors solicitors barristers sergeants and advocates."""
+
+1. B a r r i n g
+   # # # # # # #
+
+2. F l a m e _ _
+   # * # # * # #
+
+3. L a w y e r _
+   # # # # * # #
+
+4. _ _ _ _ _ _ _
+
+5. _ _ _ _ _ _ _
+
+6. _ _ _ _ _ _ _
+
+7. _ _ _ _ _ _ _
+
+8. _ _ _ _ _ _ _
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+Glare__
+Time taken to retrieve word in RB tree = 1.6511e-05 seconds.
+
+Your guess: Glare
+Part of Speech: """v. i."""
+Definition: """To shine with a bright  dazzling light."""
+
+1. B a r r i n g
+   # # # # # # #
+
+2. F l a m e _ _
+   # * # # * # #
+
+3. L a w y e r _
+   # # # # * # #
+
+4. G l a r e _ _
+   # * # # * # #
+
+5. _ _ _ _ _ _ _
+
+6. _ _ _ _ _ _ _
+
+7. _ _ _ _ _ _ _
+
+8. _ _ _ _ _ _ _
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+Roaster
+Time taken to retrieve word in RB tree = 1.7422e-05 seconds.
+
+Your guess: Roaster
+Part of Speech: """n."""
+Definition: """One who roasts meat."""
+
+1. B a r r i n g
+   # # # # # # #
+
+2. F l a m e _ _
+   # * # # * # #
+
+3. L a w y e r _
+   # # # # * # #
+
+4. G l a r e _ _
+   # * # # * # #
+
+5. R o a s t e r
+   ^ # # * * * #
+
+6. _ _ _ _ _ _ _
+
+7. _ _ _ _ _ _ _
+
+8. _ _ _ _ _ _ _
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+1
+1. B a r r i n g
+   # # # # # # #
+
+2. F l a m e _ _
+   # * # # * # #
+
+3. L a w y e r _
+   # # # # * # #
+
+4. G l a r e _ _
+   # * # # * # #
+
+5. R o a s t e r
+   ^ # # * * * #
+
+6. _ _ _ _ _ _ _
+
+7. _ _ _ _ _ _ _
+
+8. _ _ _ _ _ _ _
+
+Target Length: 7
+Target Part of Speech: """a."""
+Target Definition: """Being at rest; quiet."""
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+Resting
+Time taken to retrieve word in RB tree = 1.0934e-05 seconds.
+
+Your guess: Resting
+Part of Speech: """p. pr. & vb. n."""
+Definition: """of Rest"""
+
+1. B a r r i n g
+   # # # # # # #
+
+2. F l a m e _ _
+   # * # # * # #
+
+3. L a w y e r _
+   # # # # * # #
+
+4. G l a r e _ _
+   # * # # * # #
+
+5. R o a s t e r
+   ^ # # * * * #
+
+6. R e s t i n g
+   ^ ^ ^ ^ # # #
+
+7. _ _ _ _ _ _ _
+
+8. _ _ _ _ _ _ _
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+Restful
+You win! The target word was: Restful
+Target Part of Speech: """a."""
+Target Definition: """Being at rest; quiet."""
+
+Game Menu: 
+1: Red-Black Tree Game
+2: B-Tree Game
+3. Rules
+4: Quit
+Enter 1-4 to make a menu selection
+3
+Rules:
+You will have 8 attempts to determine the target word.
+The target word is 7 characters in length.
+Your guess words may be 3-7 characters in length
+Each valid input guess will return a definition and part of speech.
+
+^ = Letter is in the word and in the correct spot
+* = Letter is in the word but in the wrong spot
+# = Letter is not in the word in any spot
+
+Game Menu: 
+1: Red-Black Tree Game
+2: B-Tree Game
+3. Rules
+4: Quit
+Enter 1-4 to make a menu selection
+4
+Thanks for playing!
+
+Process finished with exit code 0
