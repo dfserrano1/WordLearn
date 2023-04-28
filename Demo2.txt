@@ -1,0 +1,241 @@
+
+Welcome to WordLearn!
+Time taken to load Red-Black Tree: 0.639854 seconds
+Time taken to load Hash Map: 0.984301 seconds
+Difference: 0.344447
+Game Menu: 
+1: Red-Black Tree Game
+2. Hash Map Game
+3. Rules
+4: Quit
+Enter 1-4 to make a menu selection
+2
+Time taken to search for a target word: 2.1053e-05 seconds
+Target Length: 7
+Target Part of Speech: """n."""
+Target Definition: """The Eustachian tube  or the Fallopian tube."""
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+Anatomy
+Time taken to search input in Hash Map = 5.196e-06 seconds
+
+Your guess: Anatomy
+Part of Speech: """n."""
+Definition: """The art of dissecting  or artificially separating the different parts of any organized body to discover their situation structure and economy; dissection."""
+
+1. A n a t o m y
+   # * * # # # #
+
+2. _ _ _ _ _ _ _
+
+3. _ _ _ _ _ _ _
+
+4. _ _ _ _ _ _ _
+
+5. _ _ _ _ _ _ _
+
+6. _ _ _ _ _ _ _
+
+7. _ _ _ _ _ _ _
+
+8. _ _ _ _ _ _ _
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+Bladder
+Time taken to search input in Hash Map = 8.443e-06 seconds
+
+Your guess: Bladder
+Part of Speech: """n."""
+Definition: """A bag or sac in animals  which serves as the receptacle of some fluid; as the urinary bladder; the gall bladder; -- applied especially to the urinary bladder either within the animal or when taken out and inflated with air."""
+
+1. A n a t o m y
+   # * * # # # #
+
+2. B l a d d e r
+   # * * # # # #
+
+3. _ _ _ _ _ _ _
+
+4. _ _ _ _ _ _ _
+
+5. _ _ _ _ _ _ _
+
+6. _ _ _ _ _ _ _
+
+7. _ _ _ _ _ _ _
+
+8. _ _ _ _ _ _ _
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+s
+ERROR: Your guess input must be 7 characters long!
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+1234567
+ERROR: Input guess may only be characters in the alphabet or underscores!
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+1
+1. A n a t o m y
+   # * * # # # #
+
+2. B l a d d e r
+   # * * # # # #
+
+3. _ _ _ _ _ _ _
+
+4. _ _ _ _ _ _ _
+
+5. _ _ _ _ _ _ _
+
+6. _ _ _ _ _ _ _
+
+7. _ _ _ _ _ _ _
+
+8. _ _ _ _ _ _ _
+
+Target Length: 7
+Target Part of Speech: """n."""
+Target Definition: """The Eustachian tube  or the Fallopian tube."""
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+2
+Round ended.
+Game Menu: 
+1: Red-Black Tree Game
+2. Hash Map Game
+3. Rules
+4: Quit
+Enter 1-4 to make a menu selection
+3
+Rules:
+You will have 8 attempts to determine the target word.
+The target word is 7 characters in length.
+Your guess words may be 3-7 characters in length
+All guess inputs must be 7 characters in length. 
+       -Add underscores to words to reach 7 characters. (ie: 'Candy__' OR '__both_)
+Each valid input guess will return a definition and part of speech.
+
+^ = Letter is in the word and in the correct spot
+* = Letter is in the word but in the wrong spot
+# = Letter is not in the word in any spot
+
+Game Menu: 
+1: Red-Black Tree Game
+2. Hash Map Game
+3. Rules
+4: Quit
+Enter 1-4 to make a menu selection
+1
+Time taken to search for a target word: 1.7504e-05 seconds
+Target Length: 7
+Target Part of Speech: """v. t."""
+Target Definition: """Outreaching; expansive; extended  superficially or otherwise."""
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+Large__
+Time taken to search input in RB tree = 1.2044e-05 seconds
+
+Your guess: Large
+Part of Speech: """superl."""
+Definition: """Exceeding most other things of like kind in bulk  capacity quantity superficial dimensions or number of constituent units; big; great; capacious; extensive; -- opposed to small; as a large horse; a large house or room; a large lake or pool; a large jug or spoon; a large vineyard; a large army; a large city."""
+
+1. L a r g e _ _
+   # # # # * # #
+
+2. _ _ _ _ _ _ _
+
+3. _ _ _ _ _ _ _
+
+4. _ _ _ _ _ _ _
+
+5. _ _ _ _ _ _ _
+
+6. _ _ _ _ _ _ _
+
+7. _ _ _ _ _ _ _
+
+8. _ _ _ _ _ _ _
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+Earnest
+Time taken to search input in RB tree = 1.0651e-05 seconds
+
+Your guess: Earnest
+Part of Speech: """n."""
+Definition: """Seriousness; reality; fixed determination; eagerness; intentness."""
+
+1. L a r g e _ _
+   # # # # * # #
+
+2. E a r n e s t
+   ^ # # * * ^ *
+
+3. _ _ _ _ _ _ _
+
+4. _ _ _ _ _ _ _
+
+5. _ _ _ _ _ _ _
+
+6. _ _ _ _ _ _ _
+
+7. _ _ _ _ _ _ _
+
+8. _ _ _ _ _ _ _
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+Expense
+Time taken to search input in RB tree = 1.5079e-05 seconds
+
+Your guess: Expense
+Part of Speech: """n."""
+Definition: """A spending or consuming; disbursement; expenditure."""
+
+1. L a r g e _ _
+   # # # # * # #
+
+2. E a r n e s t
+   ^ # # * * ^ *
+
+3. E x p e n s e
+   ^ ^ # ^ ^ ^ ^
+
+4. _ _ _ _ _ _ _
+
+5. _ _ _ _ _ _ _
+
+6. _ _ _ _ _ _ _
+
+7. _ _ _ _ _ _ _
+
+8. _ _ _ _ _ _ _
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+Extense
+You win! The target word was: Extense
+Target Part of Speech: """v. t."""
+Target Definition: """Outreaching; expansive; extended  superficially or otherwise."""
+
+Game Menu: 
+1: Red-Black Tree Game
+2. Hash Map Game
+3. Rules
+4: Quit
+Enter 1-4 to make a menu selection
+2
+Time taken to search for a target word: 1.653e-05 seconds
+Target Length: 7
+Target Part of Speech: """n."""
+Target Definition: """A horse which prances."""
+
+Enter your guess word. OR enter 1 to print target word details. OR enter 2 to end round.
+2
+Round ended.
+Game Menu: 
+1: Red-Black Tree Game
+2. Hash Map Game
+3. Rules
+4: Quit
+Enter 1-4 to make a menu selection
+4
+Thanks for playing!
+
+Process finished with exit code 0
