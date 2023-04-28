@@ -28,7 +28,6 @@ class RBTree {
         RBNode* rotateLeftRight(RBNode* node);
         RBNode* rotateRightLeft(RBNode* node);
 
-        //void get7LetterNodes(RBNode* node, vector<RBNode*>& vec) const;
         RBNode* searchHelper(RBNode* node, string word) const;
         void getColorsHelper(RBNode* node, vector<pair<string, bool>>& vec) const;
     public:
