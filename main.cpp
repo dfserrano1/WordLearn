@@ -5,11 +5,14 @@
 #include <sstream>
 #include <chrono>
 #include "RBTree.h"
+#include "HashMap.h"
 
 using namespace std;
 
 // Insert all data points into the tree using the RB Tree insert function.
 double loadRBTree(RBTree &treeRB);
+// Insert all data points into the tree using the hashmap insert function.
+double loadHashmap(HashMap &hashMap);
 
 // Create grid of 7 rows.
 void generateGrid(vector<pair<string,string>> &grid);
@@ -28,18 +31,22 @@ string symbolResults(string targetWord, string input);
 int main() {
 
     cout << "Welcome to WordLearn!" << endl;
-
+    double difference;
     // Load Red-Black tree and output time elapsed.
     RBTree treeRB = RBTree();
     double loadingTime;
     loadingTime = loadRBTree(treeRB);
     cout << "Time taken to load Red-Black Tree: " << loadingTime << " seconds" << endl;
+    difference = loadingTime;
 
-
-    // BTree treeB = Btree();
-    // loadingTime = 0;
-    // loadingTime = loadBTree(treeB);
-    // cout << "Time taken to load B Tree: " << loadingTime << " seconds" << endl;
+    // Load hashmap and output time elapsed.
+    HashMap hashMap = HashMap();
+    loadingTime = 0;
+    loadingTime = loadHashmap(hashMap);
+    cout << "Time taken to load Hash Map: " << loadingTime << " seconds" << endl;
+    difference = difference - loadingTime;
+    difference = abs(difference);
+    cout << "Difference: " << difference<< endl;
 
     bool game = true;
     bool round = false;
@@ -60,7 +67,7 @@ int main() {
         // Print game menu.
         cout << "Game Menu: " << endl;
         cout << "1: Red-Black Tree Game" << endl;
-        cout << "2: B-Tree Game" << endl;
+        cout << "2. Hash Map Game" << endl;
         cout << "3. Rules" << endl;
         cout << "4: Quit" << endl;
         cout << "Enter 1-4 to make a menu selection" << endl;
@@ -69,7 +76,13 @@ int main() {
         attempt = 0;
         switch (menu) {
             case 1 : { // WordLearn game using Red-Black tree.
+                // Find target word from RB tree.
+                auto start = chrono::steady_clock::now();
                 targetWord = treeRB.getTarget();
+                auto end = chrono::steady_clock::now();
+                double loadingTimeNS = double (chrono::duration_cast <chrono::nanoseconds> (end-start).count());
+                loadingTime = loadingTimeNS/(1e9);
+                cout << "Time taken to search for a target word: " << loadingTime << " seconds" << endl;
                 if (targetWord.empty()){
                     cout << "ERROR: No 7-letter words found." << '\n' << endl;
                     continue;
@@ -83,19 +96,22 @@ int main() {
                 round = true;
                 break;
             }
-            case 2: {
-
-                // targetWord = treeB.getTarget();
-                // if (targetWord.empty()){
-                //     cout << "Error: No 7-letter words found." << '\n' << endl;
-                //     continue;
-                // }
-                // word, its length (as a string), its POS, and its def
-                // cout << "Target Length: " << targetWord[1] << endl;
-                // cout << "Target Part of Speech: " << targetWord[2] << endl;
-                // cout << "Target Definition: " << targetWord[3] << '\n' << endl;
-
-                // print grid
+            case 2: { // WordLearn game using Hash Map.
+                // Find target word from Hash Map.
+                auto start = chrono::steady_clock::now();
+                targetWord = hashMap.getTarget();
+                auto end = chrono::steady_clock::now();
+                double loadingTimeNS = double (chrono::duration_cast <chrono::nanoseconds> (end-start).count());
+                loadingTime = loadingTimeNS/(1e9);
+                cout << "Time taken to search for a target word: " << loadingTime << " seconds" << endl;
+                if (targetWord.empty()) {
+                    cout << "ERROR: No 7-letter words found." << '\n' << endl;
+                    continue;
+                }
+                // Print target word details.
+                cout << "Target Length: " << targetWord[1] << endl;
+                cout << "Target Part of Speech: " << targetWord[2] << endl;
+                cout << "Target Definition: " << targetWord[3] << '\n' << endl;
 
                 round = true;
                 break;
@@ -107,7 +123,7 @@ int main() {
                 cout << "The target word is 7 characters in length." << endl;
                 cout << "Your guess words may be 3-7 characters in length" << endl;
                 cout << "All guess inputs must be 7 characters in length. " << endl;
-                cout << "       " << "Add underscores to words to reach 7 characters. (ie: 'Candy__' OR '__both_)" << endl;
+                cout << "       -Add underscores to words to reach 7 characters. (ie: 'Candy__' OR '__both_)" << endl;
                 cout << "Each valid input guess will return a definition and part of speech." << '\n' << endl;
 
                 cout << "^ = Letter is in the word and in the correct spot" << endl;
@@ -168,27 +184,32 @@ int main() {
                 break;
             }
 
-            // Search input word in selected structure.
+            // Search input word in structures.
             string inputWord = removeUnderscores(input);
             vector<string> searchWord;
-            double loadingTime = 0;
+            loadingTime = 0;
 
-            if(menu == 1) { // Search input word in RB tree.
+            if(menu == 1) { // RB Tree search.
                 auto start = chrono::steady_clock::now();
                 searchWord = treeRB.search(inputWord);
                 auto end = chrono::steady_clock::now();
                 double loadingTimeNS = double (chrono::duration_cast <chrono::nanoseconds> (end-start).count());
                 loadingTime = loadingTimeNS/(1e9);
-                cout << "Time taken to search input in RB tree = " << loadingTime << " seconds." << endl;
+                cout << "Time taken to search input in RB tree = " << loadingTime << " seconds" << endl;
             }
-            if(menu == 2) { // Search input word in B tree.
-                // searchWord = treeB.search(inputWord);
+            if(menu == 2) { // Hashmap search.
+                auto start = chrono::steady_clock::now();
+                searchWord = hashMap.search(inputWord);
+                auto end = chrono::steady_clock::now();
+                double loadingTimeNS = double (chrono::duration_cast <chrono::nanoseconds> (end-start).count());
+                loadingTime = loadingTimeNS/(1e9);
+                cout << "Time taken to search input in Hash Map = " << loadingTime << " seconds" << endl;
             }
             if(searchWord.empty()){
                 cout << "ERROR: Not in word list!" << endl;
                 continue;
             }
-            // print your guess/retrieve details
+            // Print your guess & it's details.
             cout << "\nYour guess: " << inputWord << endl;
             cout << "Part of Speech: " << searchWord[2] << endl;
             cout << "Definition: " << searchWord[3] << endl;
@@ -202,7 +223,7 @@ int main() {
             // Print grid
             printGrid(grid, attempt);
         }
-
+        // Reset the grid for the next round.
         resetGrid(grid);
     }
     return 0;
@@ -270,6 +291,71 @@ double loadRBTree(RBTree &treeRB) {
     inFile.close();
     return loadingTime;
 }
+
+
+// Insert all data points into the tree using the hashmap insert function.
+double loadHashmap(HashMap &hashMP) {
+    double loadingTime = 0;
+    // Open input file.
+    ifstream inFile;
+    inFile.open("unique_words (1).csv");
+
+    // Skip header line.
+    string line = "";
+    getline(inFile, line);
+    line = "";
+
+    // Begin timer.
+    auto start = chrono::steady_clock::now();
+
+    while(getline(inFile, line)) {
+
+        string wordID;
+        string word;
+        int length;
+        string partOfSpeech;
+        string definition;
+        string tempString;
+
+        // Read in variables from file for each word.
+        stringstream inputString(line);
+        getline(inputString, wordID, ',');
+        getline(inputString, word, ',');
+
+        // If length read in is a digit, add it to the RB tree. If not, length will be 0.
+        getline(inputString, tempString, ',');
+        bool digit = true;
+        for(int i = 0; i < tempString.length(); i++){
+            if(isdigit(tempString[i]) == 0) {
+                digit = false;
+                break;
+            }
+        }
+        if(digit) {
+            length = stoi(tempString);
+        }
+        else {
+            length = 0;
+        }
+        // Read in rest of variables.
+        getline(inputString, partOfSpeech, ',');
+        getline(inputString, definition);
+
+        // Call function to insert the word and its variables into the hashmap.
+        hashMP.insert(word, length, partOfSpeech, definition);
+
+        line = "";
+    }
+    // End timer.
+    auto end = chrono::steady_clock::now();
+
+    // Calculate time elapsed.
+    double loadingTimeNS = double (chrono::duration_cast <chrono::nanoseconds> (end-start).count());
+    loadingTime = loadingTimeNS/(1e9);
+    inFile.close();
+    return loadingTime;
+}
+
 
 // Create grid of 7 rows.
 void generateGrid(vector<pair<string,string>> &grid) {
